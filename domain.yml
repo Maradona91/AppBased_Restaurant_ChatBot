@@ -1,0 +1,99 @@
+actions:
+- action_search_restaurants
+- action_send_email
+- action_validate_location
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_emailid
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_not_operating
+entities:
+- budget
+- cuisine
+- dont_send_email
+- emailid
+- location
+- people
+intents:
+- send_mail
+- affirm
+- greet
+- restaurant_search
+- Email_Not_Valid
+- dont_send_email
+- action_search_restaurants
+- action_send_email
+- goodbye
+- stop
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: 300
+      title: Less than Rs. 300
+    - payload: 700
+      title: Rs. 300 to 700
+    - payload: 1000
+      title: More than 700
+    text: What's the average budget for two people?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like today?
+  utter_ask_email:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Should I send you details of all the restaurants on email?
+  utter_ask_emailid:
+  - text: Please, enter your email id.
+  - text: Ok great, please enter your email id.
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In which city are you looking to find a restuarant?
+  utter_default:
+  - text: Sorry, I was not able understand that.
+  utter_goodbye:
+  - text: Goodbye :)
+  - text: Bye-bye
+  utter_greet:
+  - text: Hey there! I am Foodie's bot,  How may I help you today?
+  - text: Hi, I am Foodie's bot. How can I help you?
+  - text: Hey, How is it going. I am Foodie's bot, what can I do for you today?
+  utter_not_operating:
+  - text: Oops, looks like we do not operate in that area yet. Please try with another city.
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+slots:
+  budget:
+    type: text
+  cuisine:
+    type: text
+  emailid:
+    type: text
+  location:
+    type: text
+  location_match:
+    type: categorical
+    values:
+    - zero
+    - one
